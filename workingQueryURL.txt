@@ -1,0 +1,10 @@
+query Obama
+https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&api-key=uAbFOL7EVXrGJP80oh4IVOYvwztgBbxI
+
+query Obama 1/1/2018 - 1/1/2019
+https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&start_date=20180101&end-date=20190101&api-key=uAbFOL7EVXrGJP80oh4IVOYvwztgBbxI
+
+query Obama 1/1/2018 - 1/1/2019 sort=newest
+https://api.nytimes.com/svc/search/v2/articlesearch.json?q=Obama&start_date=20180101&end-date=20190101&sort=newest&api-key=uAbFOL7EVXrGJP80oh4IVOYvwztgBbxI
+
+query Obama 1/1/2018 - 1/1/2019 sort=newest limit=5

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Week 6 - Class Activity - NY Times</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap Styling Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- CSS Styling Link -->
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <!-- Bootstrap JavaScrip Links -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- JavaScript Link -->
+    <script src="app.js"></script>
+    <!-- jQuery Link -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Jumbotron -->
+            <div class="jumbotron jumbotron-fluid text-center">
+                <h1 class="display-4">New York Times Search</h1>
+            </div>
+
+            <!-- Search Parameters Panel -->
+            <div id="search-parameters-card" class="card mb-4">
+                <div class="card-header">
+                    Search Parameters
+                </div>
+                <div id="search-parameters-card-body" class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="searchTerm">Search Term</label>
+                            <input type="text" class="form-control" id="search-term">
+                        </div>
+                        <div class="form-group">
+                            <label for="recordsToRetrieve">Number of Records to Retrieve:</label>
+                            <!-- Select Box for Drop Down Values-->
+                            <select class="form-control" id="number-of-records">
+                                <option value="1">1</option>
+                                <!-- Include attribute "selected" to have 5 be the default value-->
+                                <option value="5" selected>5</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startYear">Start Year (Optional):</label>
+                            <input type="number" class="form-control" id="start-year">
+                        </div>
+                        <div class="form-group">
+                            <label for="endYear">End Year (Optional):</label>
+                            <input type="number" class="form-control" id="end-year">
+                        </div>
+                        <button type="button" id="search-button" class= "btn btn-secondary btn-sm">Search</button>
+                        <button type="button" id="clear-results" class="btn btn-secondary btn-sm">Clear Results</button>
+                    </form>
+                </div>
+            </div>
+            <!-- Search Results Panel -->
+            <div id="top-article-card mb-4" class="card">
+                <div class="card-header">
+                    Top Articles
+                </div>
+                <div id="top-article-card-body" class="card-body">
+                    <div class="practice-well">
+                        <h2>Title</h2>
+                        <h3>Author</h3>
+                        <h4>Section</h4>
+                        <h4>Date</h4>
+                        <h4>Link</h4>
+                    </div>
+                    <div class="practice-well">
+                            <h2>Title</h2>
+                            <h3>Author</h3>
+                            <h4>Section</h4>
+                            <h4>Date</h4>
+                            <h4>Link</h4>
+                        </div>
+                </div>
+            </div>
+
+            <!-- Footer Panel -->
+            <!-- <footer>
+                <div class="card text-center">
+                    <p>Made with lots and lots of love</p>
+                </div>
+        </footer> -->
+
+        </div>
+    <script>
+
+    var apiKey = "uAbFOL7EVXrGJP80oh4IVOYvwztgBbxI";
+    var corsAnywhereUrl = "https://cors-anywhere.herokuapp.com/";
+    var queryURL = corsAnywhereUrl + "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + apiKey;
+    console.log(queryURL);
+    // Select specific HTML IDs using jQuery and store them in variables. 
+    var $searchTerm = $('#search-term');
+    var $records = $('#number-of-records');
+    var $startYear = $('#start-year');
+    var $endYear = $('#end-year');
+    var $articleResults = $('#top-article-card-body');
+    // // Create conditional for the previous parameters
+    // if ( //hasval
+    //     // then queryURL +='&param=' +val
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(response);
+        
+    })
+    </script>
+
+</body>
+</html>
