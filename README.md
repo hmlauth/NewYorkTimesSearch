@@ -8,6 +8,7 @@ Obtain <em>New York Times</em> articles based on a desired search term, number o
 4. How to select user input values from form input
 5. How to create an AJAX request
 6. How to display multiple types of API data onto page using jQuery
+7. Extensive console logging practice!
 
 ## What I Still Need To Learn
 1. How to solve "fringe" cases. For example, when the author of the article is unavailable/non-existent and therefor unable to be displayed on the page. 
